@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>lec 0504</title>
+</head>
+<body>
+	<!-- 주석 달기 -->
+	
+	<h1>h1 사이즈</h1>
+	<h2>h2 사이즈</h2>
+	<h3>h3 사이즈</h3>
+	<h4>h4 사이즈</h4>
+	<h5>h5 사이즈</h5>
+	<h6>h6 사이즈</h6>
+	
+	<p>단락구분</p>
+	<p>단락구분<br>행바꿈</p>
+	
+	<p><a href="http://www.google.com">구글로 이동</a></p>
+
+	<p><i>기울임꼴</i></p>
+	
+	<p>HTML<sub>아래첨자</sub><sup>위첨자</sup></p>
+	
+	<p><ins>밑줄 태그</ins></p>
+	<p><del>취소선 태그</del></p>
+	
+	<p> 이건 그냥 동그라미구요</p>
+	<ul>
+		<li> 메뉴 1</li>
+		<li> 메뉴 2</li>
+		<li> 메뉴 3</li>
+		<li> 메뉴 4</li>
+	</ul>
+	
+	<p>이건 번호가 매겨져요</p>
+	<ol>
+		<li>메뉴</li>
+		<li>메뉴</li>
+		<li>메뉴</li>
+		<li>메뉴</li>
+	</ol>
+	
+	<!-- exercise 1 -->
+	<p>검색 사이트 리스트</p>
+	<ol>
+		<li><a href="http://www.google.com">Google</a></li>
+		<li><a href="http://www.yahoo.com">Yahoo</a></li>
+		<li><a href="http://www.naver.com">Naver</a></li>
+	</ol>
+	
+	<!-- 테이블을 만들어 봅시다 -->
+	<table border="1">
+		<tr>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>80</td>
+			<td>70</td>
+		</tr>
+	</table>
+	----------------------------<br>
+		<!-- col sapn -->
+	<table border="1">
+		<tr>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>90</td>
+			<td>80</td>
+		</tr>
+		<tr>
+			<td colspan="2">평균</td>
+			<td>90</td>
+		</tr>
+	</table>
+	----------------------------<br>
+			<!-- row span -->
+	<table border="1">
+		<tr>
+			<td rowspan="3">홍길동</td>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+		</tr>
+		<tr>
+			<td>100</td>
+			<td>90</td>
+			<td>80</td>
+		</tr>
+		<tr>
+			<td colspan="2">평균</td>
+			<td>90</td>
+		</tr>
+	</table>
+	
+	<!-- image tag -->
+	<p><a href = "http://www.kyobobook.co.kr/index.laf"><img alt="교보문고 로고(링크)" src="kyobo.png" ></a></p>
+	<p><img alt="교보문고 로고" src="kyobo.png" width="100"></p>
+	<p><img alt="교보문고 로고" src="http://image.kyobobook.co.kr/ink/images/gnb/logo_kyobo.png"></p>
+	
+	<!-- 영상 태그 -->
+	<video src="cat.mp4" controls="controls" width="500" autoplay="autoplay"></video><br>
+	
+	
+	<!-- form tag -->
+	<form action="#" method="get">
+		이름 : <input type="text" name="userName" size="9"><br>
+		아이디 : <input type="text" name="userID" size="12"><br>
+		비밀번호 : <input type="password" name="userPW" size="20"><br>
+		연락처 : <input type="text" name="phone1" size="3"> - 
+			   <input type="text" name="phone2" size="4"> - 
+			   <input type="text" name="phone3" size="4"> <br>
+		사진 : <input type="file" name="picture"> <br>
+		성별 : <input type="radio" name="gender" value="man" checked="checked">남
+			  <input type="radio" name="gender" value="woman"> 여 <br>
+		사용 언어 : <input type="checkbox" name="lang" value="kor" checked="checked"> 한글
+				  <input type="checkbox" name="lang" value="eng"> 영어
+				  <input type="checkbox" name="lang" value="jpn"> 일본어
+				  <input type="checkbox" name="lang" value="chn"> 중국어 <br> 
+		자기소개 : <textarea rows="5" cols="20">간단하게 입력하세요.</textarea> <br>
+		국적 : <select>
+			  	<option>Korea</option>
+			  	<option>USA</option>
+			  	<option>Japan</option>
+			  	<option>China</option>
+		</select> <br>
+		좋아하는 음식 : <select multiple="multiple">
+						<option>불고기</option>
+						<option>된장국</option>
+						<option>파전</option>
+						<option>막국수</option>
+						<option>우동</option>
+						
+		
+		</select> <br>
+		<input type="submit" name="okBtn" value="ok">
+		<input type="reset" name="resetBtn" value="reset">
+	</form>
+	----------------------------------------------------<br>
+		
+	<!-- exercise2 -->
+	
+	<table border="0">
+		<tr>
+			<td>이름</td>
+			<td>
+				<input type="text" name="userName" size="9">
+			</td>
+		</tr>
+		<tr>
+			<td>아이디</td>
+			<td>
+				<input type="text" name="userID" size="12">
+			</td>
+		</tr>
+		<tr>
+			<td>비밀번호</td>
+			<td>
+				<input type="password" name="userPW" size="20">
+			</td>
+		</tr>
+		<tr>
+			<td>연락처</td>
+			<td>
+				<input type="text" name="phone1" size="3"> - 
+				<input type="text" name="phone2" size="4"> - 
+				<input type="text" name="phone3" size="4">
+			</td>
+		</tr>
+		<tr>
+			<td>사진</td>
+			<td><input type="file" name="picture"></td>
+		</tr>
+		<tr>
+			<td>성별</td>
+			<td>
+				<input type="radio" name="gender" value="man" checked="checked">남
+			  	<input type="radio" name="gender" value="woman"> 여 
+			</td>
+		</tr>
+		<tr>
+			<td>사용 언어</td>
+			<td>
+				<input type="checkbox" name="lang" value="kor" checked="checked"> 한글
+				<input type="checkbox" name="lang" value="eng"> 영어
+				<input type="checkbox" name="lang" value="jpn"> 일본어
+				<input type="checkbox" name="lang" value="chn"> 중국어
+			</td>
+		</tr>
+		<tr>
+			<td>자기 소개</td>
+			<td>
+				<textarea rows="5" cols="20">간단하게 입력하세요.</textarea>
+			</td>
+		</tr>
+		<tr>
+			<td>국적</td>
+			<td>
+				<select>
+			  	<option>Korea</option>
+			  	<option>USA</option>
+			  	<option>Japan</option>
+			  	<option>China</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>좋아하는 음식</td>
+			<td><select multiple="multiple">
+						<option>불고기</option>
+						<option>된장국</option>
+						<option>파전</option>
+						<option>막국수</option>
+						<option>우동</option>
+						</select></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" name="okBtn" value="ok">
+				<input type="reset" name="resetBtn" value="reset">
+			</td>
+		</tr>
+	</table>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+</body>
+</html>
