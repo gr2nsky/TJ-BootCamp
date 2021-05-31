@@ -326,6 +326,14 @@
 				this.style.backgroundColor = "#fbedaa";
 				//time table 생성
 				timeTableMaker(today.getMonth() + 1,this.getAttribute('id'));
+				//예약자정보 초기화
+				initTaget = document.getElementById("resInfoViewTable");
+				while(initTaget.rows.length > 0){
+					initTaget.deleteRow(initTaget.rows.length-1);
+				}
+				initRow = initTaget.insertRow();
+				initCell = initRow.insertCell();
+				initCell.innerHTML="시간을 선택해 주세요.";
 			}
 		}
 		
@@ -556,7 +564,7 @@
 		<div class="textLeft"><span style="color: #505050; font-size:30px; font-weight:700">예약 정보</span>
 		<div class="underline"></div>
 			<table id="resInfoViewTable">
-				<tr><td>시간을 클릭해 주세요.</td></tr>
+				<tr><td>시간을 선택해 주세요.</td></tr>
 			</table>
 			</div>
 		</div>

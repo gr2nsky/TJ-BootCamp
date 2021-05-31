@@ -44,7 +44,7 @@
 			<script type="text/javascript">requestAuthEamil();</script>
 		</c:when>
 		<c:otherwise>
-			<h4><!-- ${inputedEmail } :  -->사용 불가능한 email입니다.</h4>
+			<h4> ${email }은 사용 불가능한 email입니다.</h4>
 		</c:otherwise>
 	</c:choose>
 	<br><br>

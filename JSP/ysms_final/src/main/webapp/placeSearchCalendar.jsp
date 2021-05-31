@@ -25,24 +25,7 @@ var date = new Date();
 //오늘에 해당하는 월
 var realMonth = date.getMonth()+1;
 
-//전달 달력
-function prevCalendar(){
-	if (today.getMonth() < realMonth){
-		alert("예약은 금일기준 다음날부터 30일 이후까지만 가능합니다.");	
-		return false;
-	}
-	today = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
-	buildCalendar();
-}
-//다음달 달력
-function nextCalendar(){
-	if(today.getMonth()+1 == (realMonth + 1)){
-		alert("예약은 금일기준 다음날부터 30일 이후까지만 가능합니다.");
-		return false;
-	}
-	today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
-	buildCalendar();
-}
+
 //달력 제작 (이번달 기준)
 function buildCalendar(){
 	
@@ -132,6 +115,24 @@ function buildCalendar(){
 	}
 }
 
+//전달 달력
+function prevCalendar(){
+	if (today.getMonth() < realMonth){
+		alert("예약은 금일기준 다음날부터 30일 이후까지만 가능합니다.");	
+		return false;
+	}
+	today = new Date(today.getFullYear(), today.getMonth()-1, today.getDate());
+	buildCalendar();
+}
+//다음달 달력
+function nextCalendar(){
+	if(today.getMonth()+1 == (realMonth + 1)){
+		alert("예약은 금일기준 다음날부터 30일 이후까지만 가능합니다.");
+		return false;
+	}
+	today = new Date(today.getFullYear(), today.getMonth()+1, today.getDate());
+	buildCalendar();
+}
 </script>
 <body>
 <table id="calendar" align="center">

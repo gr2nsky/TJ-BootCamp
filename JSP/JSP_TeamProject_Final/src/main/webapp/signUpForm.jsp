@@ -193,7 +193,6 @@
 				<button onclick="authCodeCheck()" id="authCodeCheckBtn" type="button" disabled="disabled" class="btnChk">인증</button>
 				<input type="hidden" name="authPass" id="authPass" value="false">
 				</td>
-				<!-- <td><input type="hidden" name="authPass" id="authPass" value="false"></td> -->
 			</tr>		
 			<tr>
 				<td colspan="2"><a class="a">* 이메일이 도착하는데 1~2분정도 소요될 수 있습니다.</a><br></td>
