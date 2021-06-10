@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.checkmenu.MainActivity">
+    <item
+        android:id="@+id/submenu"
+        android:title="Sube Menu">
+
+        <menu>
+            <group
+                android:id="@+id/exclusice_checkable_group"
+                android:checkableBehavior="single">
+                <item
+                    android:id="@+id/red">
+
+                </item>
+
+
+
+            </group>
+
+        </menu>
+
+    </item>
+</menu>

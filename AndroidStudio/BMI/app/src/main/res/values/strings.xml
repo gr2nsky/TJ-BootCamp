@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">BMI</string>
+    <string name="bmi_introduct">
+
+
+        Body Mass Index의 첫 글자를 딴 것입니다.
+
+        \n
+
+        BMI지수는 ‘체질량지수’라고도 불립니다.
+
+        \n
+
+        키와 체중을 이용해서 지방의 양을 추정하고,
+
+        \n
+
+        연령, 성별을 반영하여 비만도를 측정합니다.
+    </string>
+
+    <string name="bmi_badPoint">
+         근육은 지방보다 무겁습니다.
+
+        \n
+
+        하지만, BMI지수는 근육의 양이 고려되지 않습니다.
+
+        \n
+    </string>
+</resources>

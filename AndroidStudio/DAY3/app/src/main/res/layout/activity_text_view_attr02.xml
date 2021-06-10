@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TextViewAttr02"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우린모두같이 꼭두각시 줄에 매달린 슬픈 삐에로 이대로 갈수없어 슬픈미래로 술취한호랑이 윌컴백홈"
+        android:lineSpacingMultiplier="0.5"
+        android:background="#aaaaaa"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우린모두같이 꼭두각시 줄에 매달린 슬픈 삐에로 이대로 갈수없어 슬픈미래로 술취한호랑이 윌컴백홈"
+        android:lineSpacingMultiplier="1.5"
+        android:background="#ff33dd"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="우린모두같이 꼭두각시 줄에 매달린 슬픈 삐에로 이대로 갈수없어 슬픈미래로 술취한호랑이 윌컴백홈"
+        android:singleLine="true"
+        android:ellipsize="start"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ShadowText"
+        android:textSize="40dp"
+        android:textColor="#000000"
+        android:shadowColor="#0000ff"
+        android:shadowDx="10.0"
+        android:shadowDy="30.0"
+        android:shadowRadius="10.0"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WIDE TEXT"
+        android:textSize="30dp"
+        android:textScaleX="2.0"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:inputType="textCapCharacters"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:inputType="textCapWords"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Characters"
+        android:inputType="textCapSentences"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="힌트도 생상이 있어요"
+        android:textColorHint="#dddddd"/>
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EX02editableTest"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0123456789"
+        />
+
+    <Button
+        android:id="@+id/insBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ins"/>
+    <Button
+        android:id="@+id/delBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="del"/>
+    <Button
+        android:id="@+id/appBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="app"/>
+    <Button
+        android:id="@+id/repBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="rep"/>
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear"/>
+
+</LinearLayout>

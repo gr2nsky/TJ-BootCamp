@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="06/3 Lectures"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/lec01"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="1. GridView"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/lec02"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="2. GridPoster"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/lec03"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="3. Gallery"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/lec04"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="4. List add and delete"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/lec05"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="5. Spinner(combo box)"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/lec06"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="6. On loing touch event"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="05/31 Exercises"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/ex01"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="1.On touch event"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/ex02"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="2. Listener ex1"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:id="@+id/ex03"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="3. Listener ex2"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <TextView
+            android:id="@+id/ex04"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="4. font size change"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+</LinearLayout>

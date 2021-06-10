@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ListHandling</string>
+    <string-array name="food">
+        <item>짜장</item>
+        <item>짬뽕</item>
+        <item>탕수육</item>
+        <item>피자</item>
+        <item>햄버거</item>
+        <item>치킨</item>
+        <item>짜장</item>
+        <item>짬뽕</item>
+        <item>탕수육</item>
+        <item>피자</item>
+        <item>햄버거</item>
+        <item>치킨</item>
+        <item>짜장</item>
+        <item>짬뽕</item>
+        <item>탕수육</item>
+        <item>피자</item>
+        <item>햄버거</item>
+        <item>치킨</item>
+        <item>짜장</item>
+        <item>짬뽕</item>
+        <item>탕수육</item>
+        <item>피자</item>
+        <item>햄버거</item>
+        <item>치킨</item>
+
+    </string-array>
+</resources>

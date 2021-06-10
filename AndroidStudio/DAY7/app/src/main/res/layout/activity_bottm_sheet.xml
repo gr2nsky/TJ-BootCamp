@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BottmSheet"
+    android:orientation="vertical"
+    android:paddingHorizontal="32dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="40dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:text="BottomSheet"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- 하단 Dialog에 기능을 추가할 수 있습니다."
+        android:textSize="18dp"
+        android:layout_marginBottom="8dp"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="- 밑으로 Drag하면 사라집니다."
+        android:textSize="18dp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/bs_exitBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#0E0505"
+        android:text="종료"/>
+
+</LinearLayout>
