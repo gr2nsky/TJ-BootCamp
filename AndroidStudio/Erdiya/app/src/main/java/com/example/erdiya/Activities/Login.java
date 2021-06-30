@@ -38,12 +38,22 @@ public class Login extends AppCompatActivity {
         btn = findViewById(R.id.login_btn);
         cb = findViewById(R.id.auto_login_cb);
 
-//        SharedPreferences sharedPreferences = getSharedPreferences("autoLogin",MODE_PRIVATE);
-//        int autoToken = sharedPreferences.getInt("token",0);
-//        if(autoToken == 1){
-//            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(intent);
-//        }
+        SharedPreferences sharedPreferences = getSharedPreferences("autoLogin",MODE_PRIVATE);
+        int autoToken = sharedPreferences.getInt("token",0);
+        if(autoToken == 1){
+            String spID = sharedPreferences.getString("id","0");
+            String spPW = sharedPreferences.getString("pw","0");
+            String result = requestDBWork(spID, spPW);
+            Toast.makeText(Login.this, LoginedUserInfo.user.getId() + "님 환영합니다.", Toast.LENGTH_SHORT).show();
+            if (result.equals("1")){
+                Toast.makeText(Login.this, LoginedUserInfo.user.getId() + "님 환영합니다.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            } else {
+                Toast.makeText(Login.this, "비밀번호가 변경되었습니다. 다시 로그인해 주세요.", Toast.LENGTH_SHORT).show();
+            }
+        }
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,17 +76,19 @@ public class Login extends AppCompatActivity {
         cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                if(isChecked){
-//                    SharedPreferences sharedPreferences = getSharedPreferences("autoLogin",MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    editor.putInt("token", 1);
-//                    editor.commit();
-//                }else {
-//                    SharedPreferences sharedPreferences = getSharedPreferences("autoLogin",MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();
-//                    editor.putInt("token", 0);
-//                    editor.commit();
-//                }
+                if(isChecked){
+                    SharedPreferences sharedPreferences = getSharedPreferences("autoLogin",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("token", 1);
+                    editor.putString("id", id_et.getText().toString());
+                    editor.putString("pw", pw_et.getText().toString());
+                    editor.commit();
+                }else {
+                    SharedPreferences sharedPreferences = getSharedPreferences("autoLogin",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putInt("token", 0);
+                    editor.commit();
+                }
             }
         });
     }
@@ -85,6 +97,19 @@ public class Login extends AppCompatActivity {
         String result = "0";
         try{
             LoginTask loginTask = new LoginTask(Login.this, id_et.getText().toString(), pw_et.getText().toString());
+            Object object = loginTask.execute().get();
+            result = (String) object;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    private String requestDBWork(String id, String pw){
+        String result = "0";
+        try{
+            LoginTask loginTask = new LoginTask(Login.this, id, pw);
             Object object = loginTask.execute().get();
             result = (String) object;
         }catch (Exception e){

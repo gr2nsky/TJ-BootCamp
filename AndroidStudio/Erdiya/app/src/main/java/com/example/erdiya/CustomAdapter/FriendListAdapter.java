@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.erdiya.Activities.FriendDetail;
+import com.example.erdiya.Activities.Home;
 import com.example.erdiya.Activities.MainActivity;
 import com.example.erdiya.Beans.Friend;
 import com.example.erdiya.Common.CommonInfo;
@@ -33,14 +34,14 @@ public class FriendListAdapter extends BaseAdapter {
     private int layout = 0;
     private ArrayList<Friend> friends = null;
     private LayoutInflater inflater = null;
-    private MainActivity main = null;
+    private Home main = null;
 
     private ArrayList<CheckBox> cbs;
     private ArrayList<ImageView> ivs;
     private ArrayList<Integer> selectedCheckboxPosition;
     private int dellMode = 0;
 
-    public FriendListAdapter(MainActivity main, Context con, int layout, ArrayList<Friend> friends) {
+    public FriendListAdapter(Home main, Context con, int layout, ArrayList<Friend> friends) {
         this.main = main;
         this.con = con;
         this.layout = layout;

@@ -2,229 +2,146 @@ package com.example.erdiya.Activities;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 
 import android.Manifest;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.ImageView;
 
 import com.example.erdiya.Beans.Friend;
-import com.example.erdiya.Common.CommonInfo;
-import com.example.erdiya.Common.LoginedUserInfo;
-import com.example.erdiya.CustomAdapter.FriendListAdapter;
-import com.example.erdiya.NetworkTasks.FriendSelector;
-import com.example.erdiya.NetworkTasks.PostTasks;
 import com.example.erdiya.R;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
 
-    String TAG = "@@@MAIN@@@";
+    String TAG = "@@@@@@@@@@Main@@@@@@@@@@@@@";
 
-    String jspName = "friendSelector.jsp?requester=" + LoginedUserInfo.user.getId();
+    Fragment home;
+    Fragment dial;
+    Fragment group;
 
-    public ListView friendsListView;
+    ImageView goList;
+    ImageView goGroup;
+    ImageView goDial;
 
-    ArrayList<Friend> friends;
-    FriendListAdapter friendListAdapter;
-    public LinearLayout hide_linear;
-    Button cancel_btn;
-    Button ok_btn;
-    public LinearLayout main_menu;
-    Button myinfo_btn;
-    Button insertFriends_btn;
+    public static ArrayList<Friend> fArr = new ArrayList<>();
+
+    //dial : 0, list:1, group: 2
+    int nowFragment = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getPermisson();
 
-        main_menu = findViewById(R.id.main_menu);
-        friendsListView = findViewById(R.id.main_friends_list_view);
-        hide_linear = findViewById(R.id.main_friends_btn_linear);
-        cancel_btn = findViewById(R.id.main_friends_list_cancel_btn);
-        ok_btn = findViewById(R.id.main_friends_list_ok_btn);
-        myinfo_btn = findViewById(R.id.main_friends_myinfo_btn);
-        insertFriends_btn = findViewById(R.id.main_friends_add_btn);
+        home = new Home(MainActivity.this);
+        dial = new Dial(MainActivity.this);
+        group = new GroupFragment(MainActivity.this);
 
-        cancel_btn.setOnClickListener(onClickListener);
-        ok_btn.setOnClickListener(onClickListener);
-        insertFriends_btn.setOnClickListener(onClickListener);
-        myinfo_btn.setOnClickListener(onClickListener);
+        goList = findViewById(R.id.btn_main_goList);
+        goGroup = findViewById(R.id.btn_main_goGroup);
+        goDial = findViewById(R.id.btn_main_goDial);
 
-        Log.v(TAG, jspName);
-    }
+        goList.setOnClickListener(flagBtn);
+        goGroup.setOnClickListener(flagBtn);
+        goDial.setOnClickListener(flagBtn);
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        connectGetData();
-        friendListAdapter.hideCheckbox();
-    }
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.add(R.id.fragment_section, dial);
+        fragmentTransaction.commit();
 
-    private void connectGetData(){
-        try{
-            FriendSelector networkTask = new FriendSelector(MainActivity.this, CommonInfo.hostRootAddr+jspName, "select");
-            Log.v(TAG, "Connect Addr : " + CommonInfo.hostRootAddr+jspName);
-            Object object = networkTask.execute().get();
-            friends = (ArrayList<Friend>) object;
-            friendListAdapter = new FriendListAdapter(this,MainActivity.this, R.layout.layout_friend_list_item, friends);
-            friendsListView.setAdapter(friendListAdapter);
-
-            //friendsListView.setOnItemLongClickListener(onItemLongClickListener);
-        }catch (Exception e){
-            e.printStackTrace();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[] {Manifest.permission.CALL_PHONE,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
         }
-    }
+    } //onCreate
 
-    public void getPermisson(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
-            requestPermissions(new String[]
-                            {Manifest.permission.CALL_PHONE},
-                    1);
-        }
-    }
 
-    View.OnClickListener onClickListener = new View.OnClickListener() {
+    View.OnClickListener flagBtn = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            int requestFlag = 0;
+
             switch (v.getId()){
-                case R.id.main_friends_myinfo_btn:
-                    Intent intent = new Intent(MainActivity.this, FriendDetail.class);
-                    //이후엔 진짜로 되도록 수정해
-                    LoginedUserInfo li = new LoginedUserInfo();
-                    intent.putExtra("no", li.user.getNo());
-                    intent.putExtra("id", li.user.getId());
-                    intent.putExtra("name", li.user.getName());
-                    intent.putExtra("phone", li.user.getPhone());
-                    intent.putExtra("email", li.user.getEmail());
-                    intent.putExtra("content", li.user.getContent());
-                    intent.putExtra("img", li.user.getImg());
-                    intent.putExtra("accessToken", 1);
-
-                    startActivity(intent);
+                case R.id.btn_main_goList:
+                    requestFlag = 1;
                     break;
-                case R.id.main_friends_add_btn:
-                    Intent intent1 = new Intent(getApplicationContext(), InsertFriend.class);
-                    startActivity(intent1);
+                case R.id.btn_main_goDial:
+                    requestFlag = 0;
                     break;
-                case R.id.main_friends_list_ok_btn:
-                    deleteBtnEvent();
+                case R.id.btn_main_goGroup:
+                    requestFlag = 2;
                     break;
-                case R.id.main_friends_list_cancel_btn:
-                    friendListAdapter.hideCheckbox();
             }
+            switchFragment(requestFlag);
         }
-
     };
 
-    public void deleteBtnEvent(){
-        ArrayList<Integer> temp = friendListAdapter.getSelectedCheckboxPosition();
-        ArrayList<Integer> selectedFriendsNos = new ArrayList<>();
+    public void switchFragment(int requestFlag){
+        Log.v(TAG, "now : " + nowFragment + ", request : " + requestFlag);
+        Fragment fr = null;
 
-        for(int i : temp){
-            Log.v(TAG, friendListAdapter.getFriends().get(i).printAll());
-            selectedFriendsNos.add(friendListAdapter.getFriends().get(i).getNo());
-        }
-
-        if (selectedFriendsNos.size() == 0){
-            Toast.makeText(MainActivity.this, "삭제할 친구를 선택해 주세요.", Toast.LENGTH_SHORT).show();
+        if (nowFragment == requestFlag){
             return;
         }
 
-        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
-        dialog.setTitle("친구 삭제");
-        dialog.setMessage("정말로 삭제하시겠습니까?");
-        dialog.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+        switch (requestFlag){
+            case 0:
+                fr = dial;
+                break;
+            case 1:
+                fr = home;
+                break;
+            case 2:
+                fr = group;
+                break;
+        }
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_section, fr);
+        fragmentTransaction.commit();
+        nowFragment = requestFlag;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(nowFragment != 0){
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction fragmentTransaction = fm.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_section, dial);
+            fragmentTransaction.commit();
+            nowFragment = 0;
+            return;
+        }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("종료");
+        builder.setMessage("정말 종료하시겠습니까?");
+        builder.setPositiveButton("예", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if (selectedFriendsNos.size() == 1) {
-                    deleteFriend(selectedFriendsNos);
-                } else {
-                    deleteFriends(selectedFriendsNos);
-                }
+                finish();
             }
         });
-        dialog.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("아니요", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                return;
+
             }
         });
-        dialog.show();
+        builder.show();
     }
-
-    public void deleteFriends(ArrayList<Integer> nos){
-        String jspName = "mulitDelete.jsp";
-        Object object = null;
-        String result = "0";
-
-        String data = "";
-        for(int i = 0; i < nos.size(); i ++){
-            data += Integer.toString(nos.get(i));
-            if(i != nos.size()-1){
-                data += ",";
-            }
-        }
-        PostTasks postTasks = new PostTasks(MainActivity.this, CommonInfo.hostRootAddr+jspName, data);
-
-        try {
-            object = postTasks.execute().get();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        result = (String) object;
-
-        deleteReuslt(result);
-    }
-
-    public void deleteFriend(ArrayList<Integer> nos){
-        String result = "0";
-        String data = "&no=" + nos.get(0);
-        result = requestDBWork("delete", data);
-        deleteReuslt(result);
-    }
-
-    public void deleteReuslt(String result){
-        if (result.equals("1")) {
-            Toast.makeText(MainActivity.this, "삭제되었습니다.", Toast.LENGTH_SHORT).show();
-            onResume();
-        } else {
-            Toast.makeText(MainActivity.this, "삭제에 실패했습니다.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private String requestDBWork(String work, String data){
-        String result = "0";
-        String jspName = "friendDelete.jsp?requester=" + LoginedUserInfo.user.getId() + data;
-
-        try{
-            FriendSelector networkTask = new FriendSelector(MainActivity.this, CommonInfo.hostRootAddr+jspName, work);
-            Log.v(TAG, "Connect Addr : " + CommonInfo.hostRootAddr+jspName);
-            Object object = networkTask.execute().get();
-            result = (String) object;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return result;
-    }
-
 }

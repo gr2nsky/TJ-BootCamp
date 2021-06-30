@@ -8,50 +8,43 @@
     tools:context=".Activities.MainActivity"
     android:orientation="vertical">
     <LinearLayout
-        android:id="@+id/main_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right">
-        <Button
-            android:id="@+id/main_friends_add_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추가"/>
-        <View
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"/>
-        <Button
-            android:id="@+id/main_friends_myinfo_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="내 정보"/>
-    </LinearLayout>
+        android:id="@+id/fragment_section"
+        android:layout_weight="15"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"/>
     <LinearLayout
-        android:id="@+id/main_friends_btn_linear"
+        android:layout_weight="1"
+        android:id="@+id/main_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="gone">
-        <Button
-            android:id="@+id/main_friends_list_cancel_btn"
-            android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/btn_main_goList"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="취소"/>
+            android:src="@drawable/icon_lsit"/>
         <View
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="0dp"/>
-        <Button
-            android:id="@+id/main_friends_list_ok_btn"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/btn_main_goDial"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="확인"/>
+            android:src="@drawable/icon_dial"/>
+        <View
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"/>
+        <ImageView
+            android:layout_weight="1"
+            android:id="@+id/btn_main_goGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_group"/>
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/main_friends_list_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 </LinearLayout>

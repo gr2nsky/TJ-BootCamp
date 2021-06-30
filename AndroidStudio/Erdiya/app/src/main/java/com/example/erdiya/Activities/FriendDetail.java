@@ -88,17 +88,14 @@ public class FriendDetail extends AppCompatActivity {
         String phone = intent.getStringExtra("phone");
         String email = intent.getStringExtra("email");
         String relation = intent.getStringExtra("relation");
-        String group = intent.getStringExtra("group");
+        String group = "";
         String img = intent.getStringExtra("img");
         accessToken = intent.getIntExtra("accessToken", 0);
 
-        String[] nullAbleData = {email, relation, group};
-        for (String s : nullAbleData){
-            if(s == null || s.equals("null")){
-                s = "미입력";
-            }
+        if (email.equals("null") || email.equals("") || email == null) email = "";
+        if (accessToken == 0 ) {
+            if (relation.equals("null") || relation.equals("") || relation == null) relation = "";
         }
-
 
         // <<<<<<<<<<<<<<<<< 레이아웃 아이템 바인딩 >>>>>>>>>>>>>>>>>>>>>>>>>
         iv = findViewById(R.id.friend_detail_img);
@@ -243,13 +240,13 @@ public class FriendDetail extends AppCompatActivity {
         String data = "";
         String result = "0";
 
-        if(email_tv.getText().toString() != null && !email_tv.getText().toString().equals("")){
+        if(!email_tv.getText().toString().equals("")){
             email = "&email=" + email_tv.getText().toString();
         }
-        if(relation_tv.getText().toString() != null && !relation_tv.getText().toString().equals("")){
+        if(!relation_tv.getText().toString().equals("")){
             relation = "&relation=" + relation_tv.getText().toString();
         }
-        if(group_tv.getText().toString() != null && !group_tv.getText().toString().equals("")){
+        if(!group_tv.getText().toString().equals("")){
             group = "&group=" + group_tv.getText().toString();
         }
         data = name + phone + email + relation + group + fno;
@@ -311,7 +308,7 @@ public class FriendDetail extends AppCompatActivity {
     }
 
     private void selectProfilePhoto(){
-        ActivityCompat.requestPermissions(FriendDetail.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MODE_PRIVATE);
+
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType(MediaStore.Images.Media.CONTENT_TYPE);
         intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -417,4 +414,5 @@ public class FriendDetail extends AppCompatActivity {
 
         return imgPath;
     }
+
 }
