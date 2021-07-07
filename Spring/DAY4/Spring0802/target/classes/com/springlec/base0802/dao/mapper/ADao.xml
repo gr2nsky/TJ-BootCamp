@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<mapper namespace="com.springlec.base0802.dao.ADao">
+
+	<!-- select id : dao 메서드 resultType : 이런타입으로 담아 주세 -->
+	<select id="listDao" resultType="com.springlec.base0802.dto.ADto">
+		SELECT * FROM USERINFO ORDER BY SEQNO ASC
+	</select>
+	
+	<insert id="writeDao">
+	<!-- #{param1} : ?대신 -->
+		INSERT INTO USERINFO (NAME, TELNO, ADDRESS, EMAIL, RELATION) VALUES(#{param1}, #{param2}, #{param3}, #{param4}, #{param5})
+	</insert>
+	
+	<select id="contentDao" resultType="com.springlec.base0802.dto.ADto">
+		SELECT * FROM USERINFO WHERE SEQNO=#{param1}
+	</select>
+	
+	<update id="updateDao">
+		UPDATE USERINFO SET NAME=#{param2}, TELNO=#{param3}, ADDRESS=#{param4}, EMAIL=#{param5}, RELATION=#{param6} WHERE SEQNO=#{param1}
+	</update>
+	
+	<delete id="deleteDao">
+		DELETE FROM USERINFO WHERE SEQNO=#{param1}
+	</delete>
+	
+	<!-- 데이터로 들어온 파라미터외에 쿼리 조건 파라미터를 추가한다. 데이터는 #, 쿼리변수는 $, 파라미터 변수 순서는 공유-->
+	<select id="listQuery" parameterType="String" resultType="com.springlec.base0802.dto.ADto">
+		SELECT * FROM USERINFO WHERE ${param1} LIKE CONCAT('%', #{param2}, '%')
+	</select>
+	
+</mapper>

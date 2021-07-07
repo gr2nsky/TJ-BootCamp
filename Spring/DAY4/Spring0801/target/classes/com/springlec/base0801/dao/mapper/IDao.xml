@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<mapper namespace="com.springlec.base0801.dao.IDao">
+<!-- select id : dao 메서드 resultType : 이런타입으로 담아 주세 -->
+	<select id="listDao" resultType="com.springlec.base0801.dto.ContentDto">
+		SELECT * FROM BOARD ORDER BY MID DESC
+	</select>
+	
+	<insert id="writeDao">
+	<!-- #{param1} : ?대신 -->
+		INSERT INTO BOARD (MWRITER, MCONTENT) VALUES(#{param1}, #{param2})
+	</insert>
+	
+	<delete id="deleteDao">
+		DELETE FROM BOARD WHERE MID=#{PARAM1}
+	</delete>
+</mapper>
