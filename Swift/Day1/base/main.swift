@@ -161,15 +161,55 @@ if str.count == 0{
 
 
 
+// Any, nil
+// Any : Swift의 모든 타입을 지칭하는 키워드
+// nil : null, Null, None
 
+// Any
+var someAny : Any = 100
+print(someAny)
+someAny = "Type"
+print(someAny)
+someAny = 123.12
+print(someAny)
 
+var someDouble1 : Double = 111.1
+// print(someAny + someDouble1) Any type은 다른 타입과 함께 사용 불가
+//print(Double(someAny) + someDouble1) // 이렇게 형변환 불가
+print(someAny as! Double + someDouble1)
 
+var someNil : String?
+someNil = nil
 
+// Tuple
+// Tuple 사용전
+var dialCode = 82
+var isoCode = "KR"
+var countryName = "Korea"
+print(dialCode, isoCode, countryName)
 
+// Tuple사용
+var country = (82, "KR", "Korea")
+print(country.0, country.1, country.2)
 
+var country1 = (dialCode1 : 82, isoCode1 : "KR", countryName1 : "Korea")
+print(country1.dialCode1, country1.isoCode1, country1.countryName1)
 
+// Type 별칭
+typealias MyInt = Int
+let age2 : MyInt = 20
 
+typealias person = (name : String, height: Int, marriage : Bool)
+var p1: person = ("유비", 180, true)
+print(p1.name)
 
+// Tuple을 사용하여 직사각형의 넓이와 둘레를 출력
+
+typealias Rectangle = (name : String, width : Int, height : Int, area : Int, border : Int)
+var r1: Rectangle = ("직사각형", 5,6,0,0)
+r1.area = r1.width * r1.height
+r1.border = (r1.width + r1.height) * 2
+print(r1)
 
 
 
