@@ -6,5 +6,5 @@ target 'IosLecture' do
   use_frameworks!
 
   # Pods for IosLecture
- pod 'Kanna', '~>5.2.2'
+
 end

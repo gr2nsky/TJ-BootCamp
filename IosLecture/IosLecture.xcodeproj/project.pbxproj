@@ -3,47 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
-
-/* Begin PBXBuildFile section */
-		3BF930B58399A879370EB808 /* Pods_IosLecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9389AC41C80EA82D7817AC8B /* Pods_IosLecture.framework */; };
-		802A5FCD26AE94C2000EF13B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802A5FCC26AE94C2000EF13B /* TableViewController.swift */; };
-		802A5FCF26AE9E71000EF13B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802A5FCE26AE9E71000EF13B /* DetailViewController.swift */; };
-		80D3B23B26AA91AC00791D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D3B23A26AA91AC00791D4B /* AppDelegate.swift */; };
-		80D3B23D26AA91AC00791D4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D3B23C26AA91AC00791D4B /* SceneDelegate.swift */; };
-		80D3B23F26AA91AC00791D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D3B23E26AA91AC00791D4B /* ViewController.swift */; };
-		80D3B24226AA91AC00791D4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D3B24026AA91AC00791D4B /* Main.storyboard */; };
-		80D3B24426AA91AD00791D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80D3B24326AA91AD00791D4B /* Assets.xcassets */; };
-		80D3B24726AA91AD00791D4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80D3B24526AA91AD00791D4B /* LaunchScreen.storyboard */; };
-/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1777E1D2FC37CDC7FBEFC0EA /* Pods-IosLecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosLecture.release.xcconfig"; path = "Target Support Files/Pods-IosLecture/Pods-IosLecture.release.xcconfig"; sourceTree = "<group>"; };
 		7C7B84546AA32AF0B564AD17 /* Pods-IosLecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosLecture.debug.xcconfig"; path = "Target Support Files/Pods-IosLecture/Pods-IosLecture.debug.xcconfig"; sourceTree = "<group>"; };
-		802A5FCC26AE94C2000EF13B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		802A5FCE26AE9E71000EF13B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		80D3B23726AA91AC00791D4B /* IosLecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosLecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		804AF88C26AF987000EC0301 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		804AF88E26AF98EC00EC0301 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		804AF89026AF98F500EC0301 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		804AF89226AF9CE300EC0301 /* Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		80D3B23A26AA91AC00791D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80D3B23C26AA91AC00791D4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		80D3B23E26AA91AC00791D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80D3B24126AA91AC00791D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80D3B24326AA91AD00791D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80D3B24626AA91AD00791D4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80D3B24826AA91AD00791D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9389AC41C80EA82D7817AC8B /* Pods_IosLecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosLecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		80D3B23426AA91AC00791D4B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3BF930B58399A879370EB808 /* Pods_IosLecture.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3FFA6DE907F999FAB155B781 /* Pods */ = {
@@ -60,7 +37,6 @@
 			children = (
 				80D3B23926AA91AC00791D4B /* IosLecture */,
 				80D3B23826AA91AC00791D4B /* Products */,
-				3FFA6DE907F999FAB155B781 /* Pods */,
 				C59A2BD23419D6B452FAE401 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -68,7 +44,6 @@
 		80D3B23826AA91AC00791D4B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80D3B23726AA91AC00791D4B /* IosLecture.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,13 +53,14 @@
 			children = (
 				80D3B23A26AA91AC00791D4B /* AppDelegate.swift */,
 				80D3B23C26AA91AC00791D4B /* SceneDelegate.swift */,
-				80D3B23E26AA91AC00791D4B /* ViewController.swift */,
 				80D3B24026AA91AC00791D4B /* Main.storyboard */,
 				80D3B24326AA91AD00791D4B /* Assets.xcassets */,
 				80D3B24526AA91AD00791D4B /* LaunchScreen.storyboard */,
 				80D3B24826AA91AD00791D4B /* Info.plist */,
-				802A5FCC26AE94C2000EF13B /* TableViewController.swift */,
-				802A5FCE26AE9E71000EF13B /* DetailViewController.swift */,
+				804AF88C26AF987000EC0301 /* TableViewController.swift */,
+				804AF88E26AF98EC00EC0301 /* AddViewController.swift */,
+				804AF89026AF98F500EC0301 /* DetailViewController.swift */,
+				804AF89226AF9CE300EC0301 /* Students.swift */,
 			);
 			path = IosLecture;
 			sourceTree = "<group>";
@@ -92,6 +68,7 @@
 		C59A2BD23419D6B452FAE401 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FFA6DE907F999FAB155B781 /* Pods */,
 				9389AC41C80EA82D7817AC8B /* Pods_IosLecture.framework */,
 			);
 			name = Frameworks;
@@ -99,39 +76,12 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		80D3B23626AA91AC00791D4B /* IosLecture */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 80D3B24B26AA91AD00791D4B /* Build configuration list for PBXNativeTarget "IosLecture" */;
-			buildPhases = (
-				8AB9E275DA099A64B17B831C /* [CP] Check Pods Manifest.lock */,
-				80D3B23326AA91AC00791D4B /* Sources */,
-				80D3B23426AA91AC00791D4B /* Frameworks */,
-				80D3B23526AA91AC00791D4B /* Resources */,
-				0BA0F8A6EAEEC247564001EF /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IosLecture;
-			productName = IosLecture;
-			productReference = 80D3B23726AA91AC00791D4B /* IosLecture.app */;
-			productType = "com.apple.product-type.application";
-		};
-/* End PBXNativeTarget section */
-
 /* Begin PBXProject section */
 		80D3B22F26AA91AB00791D4B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
-				TargetAttributes = {
-					80D3B23626AA91AC00791D4B = {
-						CreatedOnToolsVersion = 12.5;
-					};
-				};
 			};
 			buildConfigurationList = 80D3B23226AA91AB00791D4B /* Build configuration list for PBXProject "IosLecture" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -146,80 +96,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80D3B23626AA91AC00791D4B /* IosLecture */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		80D3B23526AA91AC00791D4B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80D3B24726AA91AD00791D4B /* LaunchScreen.storyboard in Resources */,
-				80D3B24426AA91AD00791D4B /* Assets.xcassets in Resources */,
-				80D3B24226AA91AC00791D4B /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0BA0F8A6EAEEC247564001EF /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IosLecture/Pods-IosLecture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IosLecture/Pods-IosLecture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IosLecture/Pods-IosLecture-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8AB9E275DA099A64B17B831C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IosLecture-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		80D3B23326AA91AC00791D4B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				80D3B23F26AA91AC00791D4B /* ViewController.swift in Sources */,
-				80D3B23B26AA91AC00791D4B /* AppDelegate.swift in Sources */,
-				802A5FCF26AE9E71000EF13B /* DetailViewController.swift in Sources */,
-				80D3B23D26AA91AC00791D4B /* SceneDelegate.swift in Sources */,
-				802A5FCD26AE94C2000EF13B /* TableViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
 		80D3B24026AA91AC00791D4B /* Main.storyboard */ = {
@@ -357,46 +236,6 @@
 			};
 			name = Release;
 		};
-		80D3B24C26AA91AD00791D4B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C7B84546AA32AF0B564AD17 /* Pods-IosLecture.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R723N53TD9;
-				INFOPLIST_FILE = IosLecture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tj.IosLecture;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		80D3B24D26AA91AD00791D4B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1777E1D2FC37CDC7FBEFC0EA /* Pods-IosLecture.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R723N53TD9;
-				INFOPLIST_FILE = IosLecture/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tj.IosLecture;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -405,15 +244,6 @@
 			buildConfigurations = (
 				80D3B24926AA91AD00791D4B /* Debug */,
 				80D3B24A26AA91AD00791D4B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		80D3B24B26AA91AD00791D4B /* Build configuration list for PBXNativeTarget "IosLecture" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				80D3B24C26AA91AD00791D4B /* Debug */,
-				80D3B24D26AA91AD00791D4B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

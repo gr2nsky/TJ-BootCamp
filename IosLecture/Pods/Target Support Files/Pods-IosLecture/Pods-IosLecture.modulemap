@@ -1,6 +1,0 @@
-framework module Pods_IosLecture {
-  umbrella header "Pods-IosLecture-umbrella.h"
-
-  export *
-  module * { export * }
-}
